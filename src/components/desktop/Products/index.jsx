@@ -1,16 +1,19 @@
 import React from 'react';
 import ProductList from './ProductList';
 import FilterPanel from '@/components/common/FilterPanel';
-import Sorter from '@/components/common/Sorter';
 
 const Product = () => {
   return (
-    <div>
-      <div className="flex">
+    <div className="flex flex-wrap pa4 bg-near-white min-vh-100">
+      {/* 左側篩選面板 */}
+      <div className="pr4" style={{ width: '400px' }}>
         <FilterPanel />
-        <Sorter />
       </div>
-      <ProductList />
+
+      {/* 右側商品列表 */}
+      <div className="flex-grow-1">
+        <ProductList />
+      </div>
     </div>
   );
 };
