@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { FixedSizeGrid as Grid } from 'react-window';
 import ProductCard from '@/components/common/ProductCard';
-import items from '@/data/items.json';
 
 const columnCount = 2; // 設置列數
 const padding = 16 + 16; // 內邊距
 const width = document.documentElement.clientWidth - padding;
 const columnWidth = width / columnCount; // 每列的寬度
-const ProductList = () => {
+const ProductList = (props) => {
+  const { items } = props;
   return (
     // <div className="flex flex-wrap">
     //   {items.map((item, index) => (
