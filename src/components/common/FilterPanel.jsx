@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-
-const options = [
-  { value: 'A', label: '電子產品' },
-  { value: 'B', label: '家居' },
-  { value: 'C', label: '服飾' },
-  { value: 'D', label: '食品' },
-  { value: 'E', label: '美妝' },
-];
+import { categoryOptions } from '@/utils/options';
 
 const initState = {
   search: '',
-  category: [],
+  categories: [],
   minPrice: '',
   maxPrice: '',
   sort: 'lowToHigh',
@@ -20,7 +13,6 @@ const initState = {
 
 const FilterPanel = (props) => {
   const [formState, setFormState] = useState(initState);
-  console.log({ formState });
 
   const handleChange = (name, value) => {
     setFormState({
@@ -56,17 +48,17 @@ const FilterPanel = (props) => {
           <h3 className="f6 fw6 mb2">類別</h3>
           <Select
             isMulti
-            options={options}
-            value={options.find((opt) =>
-              formState.category.includes(opt.value)
+            placeholder="選擇類別..."
+            options={categoryOptions}
+            value={categoryOptions.filter((opt) =>
+              formState.categories.includes(opt.value)
             )}
             onChange={(selected) => {
               handleChange(
-                'category',
+                'categories',
                 selected.map((item) => item.value)
               );
             }}
-            // className="w-100 pa2 br2 ba b--silver bg-white"
           />
         </div>
 
@@ -95,8 +87,8 @@ const FilterPanel = (props) => {
             value={formState.sort}
             onChange={(e) => handleChange('sort', e.target.value)}
           >
-            <option>價格由低到高</option>
-            <option>價格由高到低</option>
+            <option value="lowToHigh">價格由低到高</option>
+            <option value="highToLow">價格由高到低</option>
           </select>
         </div>
 

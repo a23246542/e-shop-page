@@ -1,9 +1,9 @@
 import React from 'react';
 import { FixedSizeList as List } from 'react-window';
 import ProductItem from '../../common/ProductItem';
-import items from '@/data/items';
 
-const ProductList = () => {
+const ProductList = (props) => {
+  const { items } = props;
   return (
     <div className="pa3">
       <div className="flex flex-wrap bg-light-gray pa2 mb1">
@@ -12,9 +12,6 @@ const ProductList = () => {
         <div className="w-25 pa2 fw6">價格</div>
         <div className="w-25 pa2 fw6">庫存</div>
       </div>
-      {/* {items.map((item, index) => (
-        <ProductItem key={index} {...item} />
-      ))} */}
       <List
         height={620} // 設置列表的高度
         itemCount={items.length} // 項目數量
@@ -23,7 +20,6 @@ const ProductList = () => {
       >
         {({ index, style }) => {
           const item = items[index];
-
           return (
             <div style={style}>
               <ProductItem {...item} />

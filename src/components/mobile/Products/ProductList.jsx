@@ -9,13 +9,6 @@ const columnWidth = width / columnCount; // 每列的寬度
 const ProductList = (props) => {
   const { items } = props;
   return (
-    // <div className="flex flex-wrap">
-    //   {items.map((item, index) => (
-    //     <div key={index} className="w-50 pa2">
-    //       <ProductCard {...item} />
-    //     </div>
-    //   ))}
-    // </div>
     <div className="w-100">
       <Grid
         className="hide-scrollbar"
@@ -23,7 +16,7 @@ const ProductList = (props) => {
         columnCount={columnCount} // 列數
         columnWidth={columnWidth} // 每列的寬度
         height={600} // 設置列表的高度
-        rowHeight={230} // 每行的高度
+        rowHeight={200} // 每行的高度
         rowCount={Math.ceil(items.length / columnCount)} // 行數
       >
         {({ columnIndex, rowIndex, style }) => {
@@ -31,10 +24,6 @@ const ProductList = (props) => {
           if (index >= items.length) return null;
           const item = items[index];
           return (
-            // <div style={style} className="pa2">
-            // <div style={style}>
-            //   <ProductCard {...item} />
-            // </div>
             <div style={style}>
               <div className="w-100 pa2" style={{ maxWidth: '100%' }}>
                 <ProductCard {...item} />

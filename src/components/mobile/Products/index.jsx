@@ -1,14 +1,16 @@
-import React from 'react';
-import ProductCard from '@/components/common/ProductCard';
+import React, { useState } from 'react';
 import FilterPanel from '@/components/common/FilterPanel';
 import ProductList from './ProductList';
-import items from '@/data/items.json';
+import useProduct from '@/hooks/useProduct';
 
 const Products = () => {
+  const [filters, setFilters] = useState({});
+  const products = useProduct({ filters });
+
   return (
     <div className="min-vh-100 bg-near-white pa3">
-      <FilterPanel />
-      <ProductList items={items} />
+      <FilterPanel onSubmit={(form) => setFilters(form)} />
+      <ProductList items={products} />
     </div>
   );
 };
