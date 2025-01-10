@@ -8,8 +8,6 @@ const padding = 16 + 16; // 內邊距
 const width = document.documentElement.clientWidth - padding;
 const columnWidth = width / columnCount; // 每列的寬度
 const ProductList = () => {
-  console.log({ width });
-
   return (
     // <div className="flex flex-wrap">
     //   {items.map((item, index) => (
@@ -20,6 +18,7 @@ const ProductList = () => {
     // </div>
     <div className="w-100">
       <Grid
+        className="hide-scrollbar"
         width={width} // 列表的寬度
         columnCount={columnCount} // 列數
         columnWidth={columnWidth} // 每列的寬度
