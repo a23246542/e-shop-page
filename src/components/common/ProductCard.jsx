@@ -1,7 +1,7 @@
 import React from 'react';
 import { categoryLabelMap } from '@/utils/utils';
 
-const ProductCard = (props = item) => {
+const ProductCard = (props) => {
   const { name, category, price, inStock } = props;
   return (
     <div

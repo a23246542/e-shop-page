@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import ProductList from './ProductList';
 import FilterPanel from '@/components/common/FilterPanel';
 import useProduct from '@/hooks/useProduct';

@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d build",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --fix"
   },
   "type": "module",
   "keywords": [],
@@ -15,19 +17,20 @@
   "license": "ISC",
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-select": "^5.9.0",
-    "react-window": "^1.8.11",
-    "vite": "^6.0.7"
+    "react-window": "^1.8.11"
   },
   "devDependencies": {
-    "eslint": "^9.17.0",
+    "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",
-    "prettier": "^3.4.2"
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.4.2",
+    "vite": "^4.4.9"
   }
 }
